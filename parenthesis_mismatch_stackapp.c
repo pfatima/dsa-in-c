@@ -10,7 +10,7 @@ char pop();
 
 int main(){
     printf("enter the expression: \n");
-    scanf("%d", stack1);
+    scanf("%s", stack1);
     push('#');
     for(i=0; i < strlen(stack1); i++)
     {
