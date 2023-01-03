@@ -1,11 +1,11 @@
 #include<stdio.h>
-#define max 20
+#define max 10
 int i, rear = -1, front = 0, op, option, insertions, deletions, q[max], size;
 void create();
 void insert();
 void delete();
 void display();
-void shift();
+//void shift();
 void main(){
     create();
     do{
@@ -24,18 +24,22 @@ void main(){
         break;
         case 2:
         {
-            printf("enter number of deletions: \n");
-            scanf("%d", &deletions);
-            for(int i = 0; i < deletions; i++)
-                delete();
-            //display();
+            if(rear == 0)
+            delete();
+            else{
+                printf("enter number of deletions: \n");
+                scanf("%d", &deletions);
+                for(int i = 0; i < deletions; i++)
+                    delete();
+                //display();
+            }
         }
         break;
         case 3:
             display();
         break;
     }
-    printf("do you wish to continue? 1 for yes or 2 for no:\n");
+    printf("hit 1 to continue:\n");
     scanf("%d", &op);
     }while(op==1);
 }
@@ -45,14 +49,13 @@ void create(){
         printf("enter size of queue: \n");
         scanf("%d", &size);
     }while(size>=max);
-    printf("queue created of size %d!\n", size);
-    printf("rear: %d front: %d\n", rear, front);
+    printf("queue created of size %d\n", size);
+    printf("rear: %d \nsize: %d \nfront: %d\n", rear, size ,front);
 }
 
 void insert(){
     int data;
-    printf("rear: %d front: %d\n", rear, front);
-    if(front == size)
+    if(rear == size -1)
     {
         printf("queue is full\n");
         return;
@@ -69,7 +72,7 @@ void insert(){
         scanf("%d", &data);
         q[++rear] = data;
     }
-    printf("rear: %d front: %d\n", rear, front);
+    //printf("rear: %d \nsize: %d \nfront: %d\n",rear, size, front);
 }
 
 void delete(){
@@ -80,10 +83,16 @@ void delete(){
         return;
     }
     ele = q[front];
-    shift();
+
+    front++;
+    //size++;
+
     printf("deleted element: %d \n", ele);
-    printf("rear: %d front: %d\n", rear, front);
-    rear--;
+    //printf("rear: %d \nsize: %d \nfront: %d\n",rear, size, front);
+
+    //shift();
+    //rear--;
+
 }
 
 void display(){
@@ -96,9 +105,12 @@ void display(){
     for(i = front; i <= rear; i++)
         printf("%d\t", q[i]);
     printf("\n");
-    printf("rear: %d front: %d\n", rear, front);
+    //printf("rear: %d \nsize: %d \nfront: %d\n", rear, size, front);
 }
+
+/*
 void shift(){
     for(int i = 0; i< rear; i++)
     q[i] = q[i+1];
 }
+*/
