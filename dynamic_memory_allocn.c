@@ -17,6 +17,7 @@ void main(){
     for(int i = 0; i < 5; i++)
         printf("%d\t", *(ptr+i));
     free(ptr);
+    ptr==NULL;
     printf("\n");
     //malloc
     printf("MALLOC\n");
@@ -51,4 +52,5 @@ void main(){
     for(int i = 0; i < n+a; i++)
         printf("%d\t", *(pointer+i));
     free(pointer);
+    pointer==NULL;
 }
