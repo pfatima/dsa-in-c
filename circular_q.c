@@ -90,8 +90,6 @@ void delete(){
         printf("queue is empty\n");
         return;
     }
-    if(front==-1)
-        front++;
     ele = q[front];
     if (front == rear) {
       front = -1;
