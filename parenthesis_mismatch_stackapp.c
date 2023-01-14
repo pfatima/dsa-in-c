@@ -1,6 +1,9 @@
-#include <stdio.h>
+#include<stdio.h>
 #define size 20
-#include <string.h>
+#include<string.h>
+
+//lab program 1
+//unbalanced parenthesis !without pointers!
 
 int top = -1, i;
 char stack1[size], stack[size], ch;
