@@ -216,7 +216,7 @@ void delete_front(){
 void display(){
     count = 0;
     //print_rfs();
-    if(rear == -1 && front == -1 || rear < front && rear!=-1)
+    if(rear == -1 && front == -1 || rear < front )
     {
         printf("queue is empty\n");
         return;
