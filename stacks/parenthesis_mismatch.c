@@ -1,9 +1,9 @@
-#include<stdio.h>
-#define size 20
-#include<string.h>
-
 //lab program 1
 //unbalanced parenthesis !without pointers!
+
+#include <stdio.h>
+#define size 20
+#include <string.h>
 
 int top = -1, i;
 char stack1[size], stack[size], ch;
@@ -22,7 +22,7 @@ int main(){
             push(ch);
         if(ch ==')')
         {
-            if(stack[top]!='#')
+            if(stack[top] != '#')
                 pop();
             else{
                 printf("closing parentheses are not balanced\n");
@@ -31,14 +31,14 @@ int main(){
         }
 
     }
-    if(stack[top]=='#')
+    if(stack[top] == '#')
         printf("parentheses are balanced\n");
     else
         printf("opening parentheses are not balanced\n");
 }
 
 void push(char b){
-    if(top==size-1)
+    if(top == size-1)
     {
         return;
     }
