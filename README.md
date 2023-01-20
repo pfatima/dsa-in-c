@@ -1,2 +1,2 @@
 # dsa-in-c
-data structures with applications
+data structures with applications in C 
