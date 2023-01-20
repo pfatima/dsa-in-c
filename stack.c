@@ -1,3 +1,4 @@
+//stack implementation using array
 #include <stdio.h>
 #define size 10
 int s[size], top = -1, op, op_2;
@@ -23,13 +24,13 @@ void main(){
             display();
             break;
         }
-        printf("do you wish to continue? 1. yes, 2. no\n");
+        printf("hit 1 to continue\n");
         scanf("%d", &op_2);
     }while(op_2 == 1);
 }
 
 void push(){
-    if(top==size-1)
+    if(top == size-1)
     {
         printf("stack is full\n");
         return;
@@ -41,7 +42,7 @@ void push(){
 }
 
 void pop(){
-    if(top== -1)
+    if(top == -1)
     {
         printf("stack is empty\n");
         return;
