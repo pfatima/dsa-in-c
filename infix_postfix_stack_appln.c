@@ -1,3 +1,4 @@
+//converting infix expression to postfix  
 #include <stdio.h>
 #include <ctype.h>
 #define size 10
