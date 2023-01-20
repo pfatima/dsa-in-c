@@ -32,7 +32,7 @@ void main(){
 void push(){
     if(top == size-1)
     {
-        printf("stack is full\n");
+        printf("stack overflow!\n");
         return;
     }
     int ele;
@@ -44,7 +44,7 @@ void push(){
 void pop(){
     if(top == -1)
     {
-        printf("stack is empty\n");
+        printf("stack underflow\n");
         return;
     }
     int val = s[top];
@@ -55,7 +55,7 @@ void pop(){
 void display(){
     if(top == -1)
     {
-        printf("stack is empty\n");
+        printf("stack underflow\n");
         return;
     }
     printf("stack elements are:\n");
