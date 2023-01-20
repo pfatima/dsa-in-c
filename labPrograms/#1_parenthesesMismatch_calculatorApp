@@ -1,5 +1,6 @@
 //lab program 1
-//parentheses mismatch
+//parentheses mismatch 
+//calculator application using stacks!
 
 #include <stdio.h>
 #include <string.h>
