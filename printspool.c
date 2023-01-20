@@ -37,7 +37,7 @@ int main()
 
 void insert(int a)
 {
-    rear = (rear+1)%sz;
+    rear = (rear + 1) % sz;
     cq[rear] = a;
     count++;
 }
@@ -48,8 +48,8 @@ void delete()
         printf("No job in print spool!\n");
     else
     {
-        printf("%d exists in print spool\n", cq[front]);
-        front = (front+1)%sz;
+        printf("%d exits print spool\n", cq[front]);
+        front = (front + 1) % sz;
         count--;
     }
 }
@@ -58,15 +58,15 @@ void display()
 {
 
     int i, j;
-    if(count==0)
+    if(count == 0)
         printf("Print spool is empty!\n");
     else{
         printf("Content of print spool\n");
         j = front;
-        for(i=j; i<count; i++)
+        for(i = j; i < count; i++)
         {
             printf("%d is printing..\n", cq[j]);
-            j = (j+1)%sz;
+            j = (j + 1) % sz;
         }
     }
 }
