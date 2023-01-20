@@ -1,4 +1,4 @@
-//converting infix expression to postfix  
+//converting infix expression to postfix + evaluating postfix expression 
 #include <stdio.h>
 #include <ctype.h>
 #define size 10
@@ -51,7 +51,7 @@ void infix_postfix(){
         }
     }
     
-    while (stack[top]!='#')
+    while (stack[top] != '#')
     {
         postfix[k++] = pop();
     } 
