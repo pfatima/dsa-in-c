@@ -1,3 +1,4 @@
+//2D array representation of sparse matrix 
 #include <stdio.h>
 #define MAX 20
 int i, j, r, c, tot;
@@ -7,18 +8,18 @@ struct sparse_matrix{
     int val;
 };
 struct sparse_matrix s[MAX], s_t[MAX];
+
 void create();
 void transpose();
 
 void main(){
-
     create();
     transpose();
 }
 
 void create(){
-    int value, k=0;
-    tot = 0;
+    int value, k = 0;
+    tot = 0; //count of non-zero values
     printf("enter number of rows and columns: \n");
     scanf("%d %d", &s[0].row, &s[0].col);
     r = s[0].row;
@@ -46,7 +47,8 @@ void create(){
     printf("%d\t%d\t%d\n", s[k].row+ 1, s[k].col+ 1, s[k].val);
 }
 void transpose(){
-    printf("transpose is: \n");
+    int k = 0;
+    printf("transpose: \n");
     /*for(i= 0; i <c; i++)
     {
         for(j= 0; j <r; j++)
@@ -57,10 +59,9 @@ void transpose(){
             printf("%d\t", s[j].val);
     printf("\n");
     */
-    int k = 0;
     for(i=0; i < tot; i++)
     {
-        for(j=0; j<tot; j++)
+        for(j = 0; j < tot; j++)
         {
             if(s[j].col == i)
             {
