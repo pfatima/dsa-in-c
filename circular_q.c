@@ -13,8 +13,7 @@ void main(){
         do{
             printf("choose among the foll: 1.insert, 2.delete, 3.display\n");
             scanf("%d", &option);
-        }while(option>3);
-
+        }while(option > 3);
 
     switch(option)
     {
@@ -42,29 +41,26 @@ void main(){
     }
     printf("hit 1 to continue:\n");
     scanf("%d", &op);
-    }while(op==1);
+    }while(op == 1);
 }
 
 void create(){
-     printf("rear: %d \nsize: %d \nfront: %d\n",rear, size, front);
     do{
         printf("enter size of queue: \n");
         scanf("%d", &size);
-    }while(size>=max);
+    }while(size >= max);
     printf("queue created of size %d\n", size);
-    printf("rear: %d \nsize: %d \nfront: %d\n", rear, size ,front);
 }
 
 void insert(){
 
     int data;
-    printf("rear: %d \nsize: %d \nfront: %d\n",rear, size, front);
     if((front == rear + 1) || (front == 0 && rear == size - 1))
     {
         printf("queue is full\n");
         return;
     }
-    if(front==-1)
+    if(front == -1)
         front++;
     /*do{
         printf("enter number of insertions: \n");
@@ -74,18 +70,16 @@ void insert(){
     }while((insertions+(rear+1)%size)>size-1);
     while(insertions--)
     {*/
-        rear = (rear+1)%size;
+        rear = (rear + 1) % size;
         printf("enter integer element: \n");
         scanf("%d", &data);
         q[rear] = data;
-
     //}
-    printf("rear: %d \nsize: %d \nfront: %d\n",rear, size, front);
 }
 
 void delete(){
     int ele;
-    if(front==-1)
+    if(front == -1)
     {
         printf("queue is empty\n");
         return;
@@ -96,22 +90,14 @@ void delete(){
       rear = -1;
     }
     else
-        front = (front+1)%size;
-    //front= (front+1)%size;
-    //size++;
+        front = (front + 1) % size;
 
     printf("deleted element: %d \n", ele);
-    printf("rear: %d \nsize: %d \nfront: %d\n",rear, size, front);
-    // insted of incrementing front,
-    //shift all elements to the left + decrement rear??
-
-    //shift();
-    //rear--;
+    
 
 }
 
 void display(){
-    //fix display
     if(rear == -1)
     {
         printf("queue is empty\n");
@@ -123,7 +109,6 @@ void display(){
             printf("%d\t", q[i]);
         printf("%d\n", q[i]);
     }
-    printf("rear: %d \nsize: %d \nfront: %d\n", rear, size, front);
 }
 
 /*
