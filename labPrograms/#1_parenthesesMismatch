@@ -1,0 +1,50 @@
+//lab program 1
+//parentheses mismatch
+
+#include <stdio.h>
+#include <string.h>
+#define size 20
+
+void push(char s[size], int*top, char ch);
+void pop(int *top);
+
+int main(){
+    int i,top = -1;
+    char infix[size], ch, stack[size];
+    printf("enter the expression: \n");
+    scanf("%s", infix);
+    push(stack, &top, '#');
+    for(i=0; i < strlen(infix); i++)
+    {
+        ch = infix[i];
+        if(ch == '(')
+            push(stack,&top,ch);
+        if(ch == ')')
+        {
+            if(stack[top] != '#')
+                pop(&top);
+            else{
+                printf("closing parentheses are not balanced\n");
+                return 0;
+            }
+        }
+
+    }
+    if(stack[top] == '#')
+        printf("parentheses are balanced\n");
+    else
+        printf("opening parentheses are not balanced\n");
+}
+
+void push(char s[size], int*top, char ch){
+    if(*top == size - 1)
+    {
+        return;
+    }
+    *top = *top + 1;
+    s[*top] = ch;
+}
+
+void pop(int *top){
+    *top = *top - 1;
+}
