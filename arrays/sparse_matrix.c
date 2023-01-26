@@ -38,7 +38,6 @@ void create(){
                 tot++;
                 k++;
             }
-            //printf("%d", val[i][j]);
         }
     }
     printf("ROW\tCOLUMN\tVALUE\n");
