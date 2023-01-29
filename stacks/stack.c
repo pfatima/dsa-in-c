@@ -10,8 +10,12 @@ void display();
 void main(){
 
     do{
-        printf("choose: 1. push, 2. pop, 3. display\n");
-        scanf("%d", &op);
+        do{
+            printf("choose: 1. push, 2. pop, 3. display\n");
+            scanf("%d", &op);
+            if(op > 3 || op < 1)
+                printf("\ninteger should be between 1 and 3\n");
+        }while(op > 3 || op < 1);
         switch(op)
         {
         case 1:
