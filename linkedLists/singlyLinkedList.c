@@ -1,4 +1,4 @@
-//single linked list 
+//singly linked list 
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -139,7 +139,7 @@ void display()
         return;
     }
     struct node * temp = head;
-    if(temp->link!=NULL)
+    if(temp->link != NULL)
         printf("singly linked list elements are ㄟ(≧◇≦)ㄏ : \n");
     else 
         printf("singly linked list element ( ﾉ ﾟｰﾟ)ﾉ : ");
