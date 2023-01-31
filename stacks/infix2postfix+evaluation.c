@@ -1,9 +1,10 @@
 //converting infix expression to postfix + evaluating postfix expression 
 #include <stdio.h>
 #include <ctype.h>
-#define size 10
+#include <math.h>
+#define size 20
 
-char postfix[20], infix[20], stack[20];
+char postfix[size], infix[size], stack[size];
 char symbol;
 int top = -1;
 
@@ -17,7 +18,7 @@ void main()
 {
     printf("enter infix expression:\n");
     scanf("%s", infix);
-    printf("%s\n", infix);
+    printf("infix: %s\n", infix);
     infix_postfix();
     printf("postfix: %s\n", postfix);
     postfix_eval();
@@ -91,6 +92,14 @@ void postfix_eval()
                 case '%':
                     res = op1 % op2;
                     break;
+
+                case '^':
+                    res = pow(op1, op2);
+                break;
+
+                default:
+                    printf("Illegal Operator\n");
+                break;
                 }
                 push(res);
         }
@@ -113,9 +122,13 @@ char pop(){
 }
 
 int pre(char a){
+    if(a == '^')
+        return 4;
     if(a == '*' || a == '/' || a == '%')
-        return 2;
+        return 3;
     else if(a == '+' || a == '-')
+        return 2;
+    else if (a == '(' || a == '#')
         return 1;
     else
         return 0;
