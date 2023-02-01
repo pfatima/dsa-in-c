@@ -46,7 +46,7 @@ void main(){
             display();
             break;
         default:
-            printf("invalid!\t;_;");
+            printf("invalid!\t");
             break;
         }
         printf("hit 1 to continue\t(/≧▽≦)/\n");
@@ -140,7 +140,7 @@ void display()
     }
     struct node * temp = head;
     if(temp->link != NULL)
-        printf("singly linked list elements are ㄟ(≧◇≦)ㄏ : \n");
+        printf("singly linked list elements are : \n");
     else 
         printf("singly linked list element ( ﾉ ﾟｰﾟ)ﾉ : ");
     while(temp->link != NULL)
