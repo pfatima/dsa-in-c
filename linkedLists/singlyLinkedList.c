@@ -19,10 +19,10 @@ void main(){
     int op1, op2;
     do{
         do{
-            printf("choose\tヾ(≧▽≦*)o\n1.insert_front\t2.insert_end\t3.delete_front\t4.delete_end\t5.display\n");
+            printf("choose\n1.insert_front\t2.insert_end\t3.delete_front\t4.delete_end\t5.display\n");
             scanf("%d", &op1);
             if(op1 > 5 || op1 < 1)
-                printf("enter valid int between 1 & 5\t(┬┬﹏┬┬)\n");
+                printf("enter valid int between 1 & 5\n");
         } while (op1 > 5 || op1 < 1);
         switch (op1)
         {
@@ -49,7 +49,7 @@ void main(){
             printf("invalid!\t");
             break;
         }
-        printf("hit 1 to continue\t(/≧▽≦)/\n");
+        printf("hit 1 to continue\n");
         scanf("%d", &op2);
     } while(op2 == 1);
 }
@@ -93,6 +93,7 @@ void insert_end()
     newnode->link = NULL;
 }
 
+//delete element from beginning of the linkedlist
 void delete_front()
 {
     if(head == NULL)
@@ -106,6 +107,7 @@ void delete_front()
     temp = NULL;
 }
 
+//delete element at the end of the linkedlist
 void delete_end()
 {
     if(head == NULL)
@@ -131,6 +133,7 @@ void delete_end()
     temp2->link = NULL;
 }
 
+//display elements in the linkedlist
 void display()
 {
     if(head == NULL)
@@ -140,9 +143,9 @@ void display()
     }
     struct node * temp = head;
     if(temp->link != NULL)
-        printf("singly linked list elements are : \n");
+        printf("singly linked list elements are: \n");
     else 
-        printf("singly linked list element ( ﾉ ﾟｰﾟ)ﾉ : ");
+        printf("singly linked list element: ");
     while(temp->link != NULL)
     {
         printf("%d -> ", temp->data);
