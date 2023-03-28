@@ -10,7 +10,7 @@ struct node
     struct node *rlink;
 };
 
-struct node * insert(int data, struct node * root)
+struct node * insert(int data, struct node *root)
 {
     struct node *newnode, *curr = NULL, *prev = NULL;
     newnode = (struct node *) malloc (sizeof(struct node));
@@ -43,11 +43,11 @@ struct node * insert(int data, struct node * root)
     return root;
 }
 
-void search (int key, struct node * root)
+void search (int key, struct node *root)
 {
     struct node *temp = root;
     int found = 0;
-    while (temp!= NULL)
+    while (temp != NULL)
     {
         if (temp->data == key)
         {
@@ -67,9 +67,7 @@ void search (int key, struct node * root)
 void inorder (struct node *root)
 {
     if (root == NULL)
-    {
         return;
-    }
     inorder(root->llink);
     printf("%d\t", root->data);
     inorder(root->rlink);
@@ -123,7 +121,7 @@ void main()
             if (root == NULL)
             {
                 printf("tree not created :(\n");
-                return;
+                break;
             }
             printf("enter key to search: \n");
             scanf("%d", &key);
@@ -134,7 +132,7 @@ void main()
             if (root == NULL)
             {
                 printf("tree not created :(\n");
-                return;
+                break;
             }
             printf("inorder:   ");
             inorder(root);
@@ -149,5 +147,5 @@ void main()
         }
         printf("\npress 1 to continue\n");
         scanf("%d", &op);
-    }while (op == 1);
+    } while (op == 1);
 }
