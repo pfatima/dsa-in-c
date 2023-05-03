@@ -21,16 +21,14 @@ void create(){
     int value, k = 0;
     tot = 0; //count of non-zero values
     printf("enter number of rows and columns: \n");
-    scanf("%d %d", &s[0].row, &s[0].col);
-    r = s[0].row;
-    c = s[0].col;
+    scanf("%d %d", &r, &c);
     printf("enter the elements: \n");
-    for(i = 0; i < r; i++)
+    for (i = 0; i < r; i++)
     {
-        for(j = 0; j < c; j++)
+        for (j = 0; j < c; j++)
         {
             scanf("%d", &value);
-            if(value != 0)
+            if (value != 0)
             {
                 s[k].row = i;
                 s[k].col = j;
@@ -42,27 +40,27 @@ void create(){
     }
     printf("ROW\tCOLUMN\tVALUE\n");
     printf("%d\t%d\t%d\n", r, c, tot);
-    for(k = 0; k < tot; k++)
-    printf("%d\t%d\t%d\n", s[k].row+ 1, s[k].col+ 1, s[k].val);
+    for (k = 0; k < tot; k++)
+        printf("%d\t%d\t%d\n", s[k].row + 1, s[k].col + 1, s[k].val);
 }
 void transpose(){
     int k = 0;
     printf("transpose: \n");
-    /*for(i= 0; i <c; i++)
+    /*for (i = 0; i < c; i++)
     {
-        for(j= 0; j <r; j++)
+        for (j = 0; j < r; j++)
             printf("%d\t", s[j].val);
         printf("\n");
     }
-    for(j= 0; j < tot; j++)
+    for (j= 0; j < tot; j++)
             printf("%d\t", s[j].val);
     printf("\n");
     */
-    for(i=0; i < tot; i++)
+    for (i = 0; i < tot; i++)
     {
-        for(j = 0; j < tot; j++)
+        for (j = 0; j < tot; j++)
         {
-            if(s[j].col == i)
+            if (s[j].col == i)
             {
                 s_t[k].row = s[j].col;
                 s_t[k].col = s[j].row;
@@ -73,6 +71,6 @@ void transpose(){
     }
     printf("ROW\tCOLUMN\tVALUE\n");
     printf("%d\t%d\t%d\n", c, r, tot);
-    for(k = 0; k < tot; k++)
-    printf("%d\t%d\t%d\n", s_t[k].row+ 1, s_t[k].col+ 1, s_t[k].val);
+    for (k = 0; k < tot; k++)
+        printf("%d\t%d\t%d\n", s_t[k].row + 1, s_t[k].col + 1, s_t[k].val);
 }
