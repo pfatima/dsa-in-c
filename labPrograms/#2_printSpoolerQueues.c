@@ -9,8 +9,7 @@ int cq[sz], rear =- 1, front = 0, count = 0;
 
 void insert(int a);
 void delete();
-void display();
-//void print_rfc(); 
+void display(); 
 
 void print_rfc()
 {
@@ -20,7 +19,7 @@ void print_rfc()
 int main()
 {
     int item, ch;
-    for(;;)
+    for (;;)
     {
         printf("Enter your choice:\n1.Insert\t2.Delete\n3.Show status\t4.Exit\n");
         scanf("%d", &ch);
@@ -57,7 +56,7 @@ void insert(int a)
 
 void delete()
 {
-    if(count == 0)
+    if (count == 0)
         printf("No job in print spooler!\n");
     else
     {
@@ -73,16 +72,16 @@ void display()
     int i, j;
     if(count == 0)
         printf("Print spooler is empty!\n");
-    else{
+    else
+    {
         printf("Content of print spooler:\n");
-        if(rear==front && count == 1)
+        if (rear == front && count == 1)
         {
             printf("%d is printing..\n", cq[rear]);
             return;
         }
         j = front;
-        
-        for(i = j; i < count; i++)
+        for (i = 0; i < count; i++)
         {
             printf("%d is printing..\n", cq[j]);
             j = (j + 1) % sz;
